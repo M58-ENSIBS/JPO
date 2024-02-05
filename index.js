@@ -327,13 +327,3 @@ app.get('/', (req, res) => {
 app.listen(4567, () => {
     console.log('http://localhost:4567');
 });
-
-
-/// ALL FLAGS /// 
-// CLOG{1st_ch4ll3ng3_1s_4lw4ys_3asy}
-// CLOG{2nd_flag_h1dd3n_1n_r4nd0m_pl4c3}
-// CLOG{3rd_flag_l4st_ea5y_0ne!!!}
-// CLOG{4th_V3rb_T4mpering_1N_A_NuTsh3ll}
-// CLOG{5th_Wh0_1s_3mpl0y33_0f_th3_y34r?}
-// CLOG{6th_Supr3m3_L34d3r_0f_jWt?}
-// CLOG{7th_Fr0m_Intern_To_Adm1n_of_Csssr_Webs1te?}
