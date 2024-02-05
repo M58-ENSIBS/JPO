@@ -41,24 +41,31 @@ else:
     print("[-] Invalid input")
     exit(1)
 
-regex_flag = r'CLOG{.*'
+regex_flag = r"CLOG{.*}"
 
 ## Récupération du premier flag
 
 print(colored("=====> [+] Récupération du premier flag <=====", 'red', attrs=['bold']))
 response = requests.get(url_challenge)
 flag = re.findall(regex_flag, response.text)
+print("Flag:", flag)
 
-print("[+] " + colored(flag[0], 'green') + " in the content of " + url_challenge + "\n")
+if flag:    
+    print("[+] " + colored(flag[0], 'green') + " in the content => " + url_challenge + "\n")
+else:
+    print("[-] No flag found in the content => " + url_challenge + "\n")
 all_flags.append(flag[0])
 
 ## Récupération du deuxième flag
 
 print(colored("=====> [+] Récupération du deuxième flag <=====", 'red', attrs=['bold']))
-path = "/validator"
+path = "/"
 response = requests.get(f"{url_challenge}{path}")
-regex_js = r'([a-zA-Z0-9]+/[a-zA-Z0-9]+.js)'
+print(response.text)
+# regex js/index_public.js
+regex_js = r'([a-zA-Z0-9]+/[a-zA-Z0-9_]+.js)'
 js_file = re.findall(regex_js, response.text)
+print(js_file)
 
 if js_file:
     print(f'File found: {js_file[0]}')

@@ -1,3 +1,4 @@
+import { f2 } from './Module_Chrono.js';
 (function () {
     const second = 1000,
           minute = second * 60,
@@ -25,4 +26,4 @@
 
         }, 0)
     }());
-    
+    f2();
