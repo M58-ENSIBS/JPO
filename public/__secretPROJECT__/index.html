@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__secretPROJECT__</title>
+    <link rel="stylesheet" href="css/index_secret.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:700,400&subset=cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>CSSSR</span>Секретный архив учреждения</div>
+        <div class="stamp"><span>Подарок</span>CLOG{5th_Wh0_1s_3mpl0y33_0f_th3_y34r?}</div>
+        <h1 id="output"></h1>
+    </header>
+    <hr>
+
+    <div class="content">
+        <h2>Qui sommes-nous?</h2>
+        <p>Nous sommes CSSSR, un établissement secret dédié à la préservation des connaissances et à la sécurité.</p>
+        <img src ="https://fondationscp.wdfiles.com/local--files/proposition-lga/cure-o5-col" alt="CSSSR">
+
+        <h2>Nos Missions</h2>
+        <p>Nos missions incluent la recherche secrète, la gestion de l'information confidentielle et le maintien de l'ordre dans notre domaine secret.</p>
+        <p>Nous travaillons en étroite collaboration avec des organisations similaires pour assurer la stabilité et la sécurité de notre monde caché.</p>
+        <img src="https://i.redd.it/hg98hlbzhwx31.jpg" alt="CSSSR">
+
+        <h2>Liaison étroite avec la Fondation SCP</h2>
+        <p>En tant que partenaire privilégié, nous entretenons une liaison étroite avec la Fondation SCP. Cette collaboration renforce nos capacités dans la préservation et la protection des objets et entités anormales.</p>
+        <p>Nos agents travaillent main dans la main avec la Fondation pour garantir la sécurité et la confidentialité de nos opérations conjointes.</p>
+
+        <h2>Vos Missions</h2>
+        <p>En tant que membre de notre équipe, vos missions comprennent la collaboration sur des projets confidentiels, le maintien de la discrétion et la défense des intérêts de CSSSR.</p>
+        <p>Nous comptons sur votre engagement envers l'excellence et la sécurité pour accomplir nos missions avec succès.</p>
+
+        <h2>Futur Projet Important</h2>
+        <p>Nous sommes ravis de vous annoncer qu'un futur projet d'une importance cruciale est en cours de préparation, et vous serez impliqué de manière significative.</p>
+        <p>Ce projet promet d'apporter des avancées significatives dans notre domaine et de renforcer davantage notre position en tant qu'organisation clé dans le monde secret.</p>
+        <p>Restez à l'écoute <a href="/csssr.secorg/">pour plus de détails passionnants</a> sur cette mission à venir.</p>
+    </div>
+
+    <script>
+        // At least some fun in this secret website :D
+        let data = "Добро пожаловать в REDACTED!";
+        let output = document.getElementById("output");
+
+        for (let i = 0; i < data.length; i++) {
+            setTimeout(function() {
+                output.innerHTML += "<span>" + data[i] + "</span>";
+            }, i * 200);
+        }
+    </script>
+</body>
+</html>

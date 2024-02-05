@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /intranetCompany/
+
+User-agent: *
+Allow: /

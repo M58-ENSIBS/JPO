@@ -1,0 +1,23 @@
+# use the dockerfile to build the image
+# the dockerfile use node:alpine as base image
+version: '3'
+services:
+  jpo:
+    build: .
+    networks:
+        - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.jpo.entrypoints=web,websecure"
+      - "traefik.http.routers.jpo.rule=Host(`jpo.cyberlog.dev`)"
+      - "traefik.http.services.jpo.loadbalancer.server.port=3000"
+      - "traefik.http.routers.jpo.tls=true"
+      - "traefik.http.routers.jpo.tls.certresolver=lets-encrypt"
+    restart: always
+
+networks:
+  web:
+    external: true
+  internal:
+    driver: bridge
