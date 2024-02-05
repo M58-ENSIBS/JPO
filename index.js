@@ -13,8 +13,8 @@ app.use(cookieParser());
 
 // CSSSR.secorg //
 
-app.get('/SCP.png', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/CSSSR_Page/picture/SCP.png'));
+app.get('/index.css', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/CSSSR_Page/css/index_csssr.css'));
 });
 
 // jwt secret key //
@@ -110,7 +110,7 @@ app.get('/AdminENDPOINT_CSSSR_WEBSITE', (req, res) => {
     }
 });
 
-app.get('/index_admin_csssr.css', (req, res) => {
+app.get('/index.css', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/AdminENDPOINT_CSSSR_WEBSITE/css/index_admin_csssr.css'));
 });
 
@@ -177,7 +177,7 @@ app.post('/downloadTASK-S.L', (req, res) => {
 });
 
 app.get('/TASKS_UPLOADER:timestamp', (req, res) => {
-    const timestamp = req.params.timestam;
+    const timestamp = req.params.timestamp;
     const path = `./public/CSSSR_Page/TASKS_UPLOADER/${timestamp}.txt`;
     res.download(path);
 });
@@ -185,14 +185,6 @@ app.get('/TASKS_UPLOADER:timestamp', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // VALIDATOR //
-
-app.get('/infos', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/infos.html'));
-});
-
-app.get('/infos.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/infos.css'));
-});
 
 app.post('/flagSubmit', (req, res) => {
     const username = req.body.username;
@@ -243,17 +235,19 @@ app.get('/intranetCompany', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/intranetCompany/index.html'));
 });
 
-app.get('/index_intra.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/intranetCompany/css/index_intra.css'));
+app.get('/index.css', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/intranetCompany/index_intra.css'));
 });
 
-app.get('/index_secret.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/__secretPROJECT__/css/index_secret.css'));
+app.get('/index.css', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/__secretPROJECT__/index_secret.css'));
 });
 
-app.get('/index_csssr.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/CSSSR_Page/css/index_csssr.css'));
+app.get('/index.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/intranetCompany/dashboard.js'));
 });
+
+
 
 app.post('/intranetCompany/loginINTRANET', (req, res) => {
     const username = req.body.username;
@@ -302,7 +296,7 @@ app.get('/intranetCompany/debugONLY', (req, res) => {
         let notes = {"c4ca4238a0b923820dcc509a6f75849b": "Employée très sympathique, de bons résultats, mais elle a tendance à se faire remarquer par ses blagues douteuses. Je ne sais pas si c'est une bonne chose pour l'image de l'entreprise.",
         "c81e728d9d4c2f636f067f89cc14862c": "Stagiaire très prometteur, il a su s'intégrer rapidement dans l'équipe et a fait preuve d'une grande motivation.",
         "eccbc87e4b5ce2fe28308fd9f2a7baf3": "Employé très sérieux, il a su faire preuve de professionnalisme et de rigueur. Je recommande.",
-        "ad61ab143223efbc24c7d2583be69251" : "Nous avons sélectionné REDACTED pour ses aptitudes hors du commun. Je pense que c'est l'élément qui nous manquait pour faire décoller notre projet ... Lui transmettre ces instructions (/zip_dossier/REDACTED.zip) et le laisser travailler. Il saura quoi faire.",
+        "ad61ab143223efbc24c7d2583be69251" : "Nous avons sélectionné REDACTED pour ses aptitudes hors du commun. Je pense que c'est l'élément qui nous manquait pour faire décoller notre projet ... Lui transmettre ces instructions (/zip_dossier:mdp(ID+[space])) et le laisser travailler. Il saura quoi faire.",
         };
         if (id_notes in notes) {
             res.json(notes[id_notes]);
@@ -310,6 +304,14 @@ app.get('/intranetCompany/debugONLY', (req, res) => {
     } else {
         res.redirect('/404');
     }
+});
+
+app.get('/intranetCompany/css/dashboard.css', (req, res) => {x
+    res.sendFile(path.join(__dirname, '/public/intranetCompany/css/dashboard.css'));
+});
+
+app.get('/intranetCompany/js/dashboard.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/intranetCompany/js/dashboard.js'));
 });
 
 app.get('*', (req, res) => {

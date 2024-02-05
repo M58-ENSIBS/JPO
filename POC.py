@@ -58,25 +58,25 @@ all_flags.append(flag[0])
 
 ## Récupération du deuxième flag
 
-print(colored("=====> [+] Récupération du deuxième flag <=====", 'red', attrs=['bold']))
-path = "/"
-response = requests.get(f"{url_challenge}{path}")
-print(response.text)
-# regex js/index_public.js
-regex_js = r'([a-zA-Z0-9]+/[a-zA-Z0-9_]+.js)'
-js_file = re.findall(regex_js, response.text)
-print(js_file)
+# print(colored("=====> [+] Récupération du deuxième flag <=====", 'red', attrs=['bold']))
+# path = "/"
+# response = requests.get(f"{url_challenge}{path}")
+# # regex js/index_public.js
+# regex_js = r'([a-zA-Z0-9]+/[a-zA-Z0-9_]+.js)'
+# js_file = re.findall(regex_js, response.text)
+# print(js_file)
 
-if js_file:
-    print(f'File found: {js_file[0]}')
-    response = requests.get(f"{url_challenge}/{js_file[0]}")
-    regex_js = r'([a-zA-Z0-9!@#$%^&*()_+=-`~{}|:;<>,.?/]+.js)'
-    js_file = re.findall(regex_js, response.text)[0][1:]
-    print(f'File found: {js_file}')
-    response = requests.get(f"{url_challenge}/js{js_file}")
-    flag = re.findall(regex_flag, response.text)
-    print(f"[+] {colored(flag[0], 'green')} in the content => {url_challenge}/js{js_file}\n")
-    all_flags.append(flag[0])
+# if js_file:
+#     print(f'File found: {js_file[0]}')
+#     response = requests.get(f"{url_challenge}/{js_file[0]}")
+#     regex_js = r'([/a-zA-Z0-9_]+.js)'
+#     js_file = re.findall(regex_js, response.text)[0][1:]
+#     print(f'File found: {js_file}')
+#     response = requests.get(f"{url_challenge}/js/{js_file}")
+#     print(response.text)
+#     flag = re.findall(regex_flag, response.text)
+#     print(f"[+] {colored(flag[0], 'green')} in the content => {url_challenge}/js{js_file}\n")
+#     all_flags.append(flag[0])
 
 print(colored("=====> [+] Récupération du troisième flag <=====", 'red', attrs=['bold']))
 
@@ -303,9 +303,6 @@ def brute_force(first, end):
             all_founded.append(i)
             print(response.text)
             print("\n")
-            if len(all_founded) >= 6:
-                print("Found 6 URLs, stopping...")
-                return
 
 dict_timestamp = {
     "1706795963000":"1706795964000",
