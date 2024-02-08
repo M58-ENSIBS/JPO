@@ -65,4 +65,18 @@ img {
     margin-bottom: 20px;
   }
 
+  button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #871d1d;
+    margin-bottom: 20px;
+  }
+
 
