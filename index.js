@@ -314,6 +314,10 @@ app.get('/intranetCompany/js/dashboard.js', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/intranetCompany/js/dashboard.js'));
 });
 
+app.get('/infos', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/infos.html'));
+});
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/404.html'));
 });
