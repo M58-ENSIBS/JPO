@@ -253,18 +253,22 @@ app.post('/intranetCompany/loginINTRANET', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     let error = null;
-
+    // Print current timestamp
+    fs.appendFile('.log.txt', "Connection au login de base à " + new Date().toLocaleString() + "\n", (err) => { if (err) { console.log(err); } });
     if (req.body.username === '') {
         res.json({ error: 'Please enter a username' });
     } else if (req.body.password === '') {
         res.json({ error: 'Please enter a password' });
     } else if (username === 'debugONLY' && password === 'debugONLY') {
+        fs.appendFile('.log.txt', "Connection au login debugONLY à " + new Date().toLocaleString() + "\n", (err) => { if (err) { console.log(err); } });
         res.cookie('cookies', '67b27879506e6863f8760faf4a183729b9777f81', { maxAge: 900000, httpOnly: true });
         res.redirect('/intranetCompany/debugONLY'); 
     } else if (username === 'REDACTED' && password === 'TEMPORARY_PASSWORD_69420') {
+        fs.appendFile('.log.txt', "Connection au login REDACTED à " + new Date().toLocaleString() + "\n", (err) => { if (err) { console.log(err); } });
         res.cookie('cookies', 'b239f88bf63d4e95b1b23c9db7d68b40666167f3', { maxAge: 900000, httpOnly: true });
         res.redirect('/__secretPROJECT__/');
     } else if (username === 'ADMINCSSSR_WEBSITE' && password === '6173170799') {
+        fs.appendFile('.log.txt', "Connection au login ADMINCSSSR_WEBSITE à " + new Date().toLocaleString() + "\n", (err) => { if (err) { console.log(err); } });
         res.cookie('cookies', '7e3851aec784b51e47005966e4cd7c64f6fe591a', { maxAge: 900000, httpOnly: true });
         res.redirect('/AdminENDPOINT_CSSSR_WEBSITE/');
     } else {
@@ -316,7 +320,7 @@ app.get('/intranetCompany/js/dashboard.js', (req, res) => {
 
 app.get('/infos', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/infos.html'));
-});
+}); 
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/404.html'));
