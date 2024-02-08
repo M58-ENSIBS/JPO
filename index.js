@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 // CSSSR.secorg //
 
-app.get('/index.css', (req, res) => {
+app.get('/index_csssr.css', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/CSSSR_Page/css/index_csssr.css'));
 });
 
@@ -110,7 +110,7 @@ app.get('/AdminENDPOINT_CSSSR_WEBSITE', (req, res) => {
     }
 });
 
-app.get('/index.css', (req, res) => {
+app.get('/index_admin_csssr.css', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/AdminENDPOINT_CSSSR_WEBSITE/css/index_admin_csssr.css'));
 });
 
@@ -235,16 +235,16 @@ app.get('/intranetCompany', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/intranetCompany/index.html'));
 });
 
-app.get('/index.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/intranetCompany/index_intra.css'));
+app.get('/index_intra.css', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/intranetCompany/css/index_intra.css'));
 });
 
-app.get('/index.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/__secretPROJECT__/index_secret.css'));
+app.get('/index_secret.css', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/__secretPROJECT__/css/index_secret.css'));
 });
 
-app.get('/index.js', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/intranetCompany/dashboard.js'));
+app.get('/dashboard.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/intranetCompany/js/dashboard.js'));
 });
 
 
