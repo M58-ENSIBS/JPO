@@ -317,8 +317,8 @@ app.get('/infos', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/infos.html'));
 });
 
-app.get('/writeups', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/writeups.html'));
+app.get('/writeup', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/writeup.html'));
 });
 
 
