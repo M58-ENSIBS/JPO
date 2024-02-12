@@ -6,7 +6,7 @@ The challenge was reserved for beginners in the field, with 7 flags of increasin
 ## Authors
 
 - [@M58](https://www.github.com/M58-ENSIBS)
-- Help from [@couttcoutt](https://github.com/coutand-bastien)
+- Help from [@PauvreTimo](https://github.com/PauvreTimo)
     and [@Alleph](https://github.com/Alleph)
 
 ## Deployment
