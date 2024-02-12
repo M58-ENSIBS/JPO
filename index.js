@@ -295,7 +295,7 @@ app.get('/intranetCompany/debugONLY', (req, res) => {
         let notes = {"c4ca4238a0b923820dcc509a6f75849b": "Employée très sympathique, de bons résultats, mais elle a tendance à se faire remarquer par ses blagues douteuses. Je ne sais pas si c'est une bonne chose pour l'image de l'entreprise.",
         "c81e728d9d4c2f636f067f89cc14862c": "Stagiaire très prometteur, il a su s'intégrer rapidement dans l'équipe et a fait preuve d'une grande motivation.",
         "eccbc87e4b5ce2fe28308fd9f2a7baf3": "Employé très sérieux, il a su faire preuve de professionnalisme et de rigueur. Je recommande.",
-        "ad61ab143223efbc24c7d2583be69251" : "Nous avons sélectionné REDACTED pour ses aptitudes hors du commun. Je pense que c'est l'élément qui nous manquait pour faire décoller notre projet ... Lui transmettre ces instructions (/zip_dossier:mdp(ID+[space])) et le laisser travailler. Il saura quoi faire.",
+        "ad61ab143223efbc24c7d2583be69251" : "Nous avons sélectionné REDACTED pour ses aptitudes hors du commun. Je pense que c'est l'élément qui nous manquait pour faire décoller notre projet ... Lui transmettre ces instructions (/zip_dossier/REDACTED.zip) et le laisser travailler. Il saura quoi faire.",
         };
         if (id_notes in notes) {
             res.json(notes[id_notes]);
